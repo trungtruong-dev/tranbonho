@@ -9,7 +9,7 @@ const elts = {
     text2: document.getElementById("text2"),
 };
 
-const texts = ["Nhấn", "vào", "Trái", "Tim", "❤️"];
+const texts = ["Nhấn", "vào", "Trái", "Tim","Nè", "❤️"];
 
 const morphTime = 1;
 const cooldownTime = 0.25;
