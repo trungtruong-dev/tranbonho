@@ -13,15 +13,29 @@
 <body>
 
   <h1>Anh có điều muốn nói</h1>
-  <button onclick="generateRandomNotifications()">Nhấn đây nè</button>
+  <button id="playButton" onclick="generateRandomNotifications()">Nhấn đây nè</button>
   <div class="final-message" id="finalMessage" onclick="redirectToNewPage()">
     <p id="text1" style="opacity: 0.91461; filter: blur(2px);">Trái</p>
     <p id="text2" style="opacity: 0.525306; filter: blur(32px);">Tim</p>
   </div>
   <audio id="audioPlayer" src="./TBN.mp3"  autoplay></audio>
-
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audioPlayer = document.getElementById("audioPlayer");
+      const playButton = document.getElementById("playButton");
+  
+      audioPlayer.play().catch(() => {
+        // Nếu âm thanh bị chặn, hiển thị nút để người dùng nhấn
+        playButton.style.display = "block";
+  
+        playButton.addEventListener("click", function () {
+          audioPlayer.play();
+        });
+      });
+    });
+  </script>
   <script src="./script.js"></script>
-  yêy
 </body>
 
 </html>
